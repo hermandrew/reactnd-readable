@@ -13,7 +13,7 @@ class CommentList extends Component {
 
     return <Comment.Group style={{padding: '1em 1em 1em 2em'}}>
       {comments.filter(thisComment => !(thisComment.isDeleted || thisComment.arentDeleted))
-        .sort((commentA, commentB) => commentB.timestamp - commentA.timestamp)
+        .sort((commentA, commentB) => commentA.timestamp - commentB.timestamp)
         .map( thisComment => <SingleComment comment={thisComment} key={thisComment.id} /> )}
     </Comment.Group>
   }

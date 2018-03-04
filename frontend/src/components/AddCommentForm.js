@@ -54,7 +54,7 @@ class AddCommentForm extends Component {
           ...this.state.comment,
           parentId: postID,
           timestamp: Date.now(),
-          id: uuidv5('hello.example.com', uuidv5.DNS)
+          id: uuidv5('hello.example.com' + Date.now(), uuidv5.DNS)
         }
 
         createComment(thisComment)

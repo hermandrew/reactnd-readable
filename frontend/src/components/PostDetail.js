@@ -13,7 +13,7 @@ class PostDetail extends Component {
   }
 
   componentDidMount() {
-    this.props.getComments()
+    this.props.getComments(get(this.props, 'match.params.post_id', null))
   }
 
   render() {
@@ -35,7 +35,7 @@ class PostDetail extends Component {
 
 const mapDispatchToProps = (dispatch, { match }) => ({
   createComment: (comment) => dispatch(createComment({ comment })),
-  getComments: () => dispatch(getComments({ id: get(match, 'params.post_id', null) }))
+  getComments: (postID) => dispatch(getComments({ id: postID }))
 })
 
 const mapStateToProps = ({posts, comments}, ownProps) => {
