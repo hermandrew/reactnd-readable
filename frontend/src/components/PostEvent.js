@@ -16,8 +16,17 @@ class PostEvent extends Component {
     post: PropTypes.object.isRequired
   }
 
-  handleUpVote = () => this.props.upVote()
-  handleDownVote = () => this.props.downVote()
+  handleUpVote = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    this.props.upVote()
+  }
+
+  handleDownVote = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    this.props.downVote()
+  }
 
   handleTap = () => {
     const { history, post } = this.props
